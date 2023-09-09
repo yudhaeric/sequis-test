@@ -34,8 +34,16 @@ export default function Homepage() {
   return (
     <div className='flex flex-col items-center'>
       {/* Header */}
-      <div className='flex'>
-
+      <div className='flex mb-7 justify-between items-center gap-8 w-full pl-4 pr-8'>
+        <div className='flex items-end bg-[#FF6B01] w-52 h-20 pl-4 pb-2'>
+          <h1 className='uppercase font-bold'><span className='line-through'>logoooooo</span> <br/> web developer </h1>
+        </div>
+        <Image
+          src="/hamburger-menu.png"
+          width={30}
+          height={30}
+          alt='Menu Icon'
+        />
       </div>
       {/* Article Section */}
       <div className='grid grid-cols-1 gap-6 w-[85%] lg:grid-cols-2'>
