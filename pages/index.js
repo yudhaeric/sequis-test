@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Image from 'next/image';
 
 export default function Homepage() {
   const [articles, setArticles] = useState([]);
@@ -31,19 +32,24 @@ export default function Homepage() {
   }, []);
 
   return (
-    <div>
-      {articles.map((article) => (
-        <div key={article.id}>
-          <h2>{article.title}</h2>
-          <p>{article.summary}</p>
-        </div>
-      ))}
-
-      {categories.map((category) => (
-        <div key={category.id}>
-          <h2>{category.title}</h2>
-        </div>
-      ))}
+    <div className='flex flex-col items-center'>
+      <div className='grid grid-cols-2 gap-6 w-[85%]'>
+        {articles.map((article) => (
+          <div key={article.id} className='flex flex-col items-center'>
+            <Image
+              className='rounded-xl w-[600px] h-[400px]'
+              src={article.image}
+              width={600}
+              height={450}
+              alt='Image Article'
+            />
+            <div className='border-2 border-solid border-black rounded-full mt-7 px-3'>
+              <h5 className='uppercase text-sm'>By <span className='font-bold'>{article.author}</span></h5>
+            </div>
+            <h2 className='mt-5 text-center text-xl font-semibold'>{article.title}</h2>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
