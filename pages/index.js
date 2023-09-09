@@ -33,11 +33,16 @@ export default function Homepage() {
 
   return (
     <div className='flex flex-col items-center'>
-      <div className='grid grid-cols-2 gap-6 w-[85%]'>
+      {/* Header */}
+      <div className='flex'>
+
+      </div>
+      {/* Article Section */}
+      <div className='grid grid-cols-1 gap-6 w-[85%] lg:grid-cols-2'>
         {articles.map((article) => (
           <div key={article.id} className='flex flex-col items-center'>
             <Image
-              className='rounded-xl w-[600px] h-[400px]'
+              className='rounded-xl w-[600px] h-[200px] lg:h-[400px]'
               src={article.image}
               width={600}
               height={450}
@@ -46,7 +51,7 @@ export default function Homepage() {
             <div className='border-2 border-solid border-black rounded-full mt-7 px-3'>
               <h5 className='uppercase text-sm'>By <span className='font-bold'>{article.author}</span></h5>
             </div>
-            <h2 className='mt-5 text-center text-xl font-semibold'>{article.title}</h2>
+            <h2 className='mt-4 text-center text-xl font-semibold'>{article.title}</h2>
           </div>
         ))}
       </div>
