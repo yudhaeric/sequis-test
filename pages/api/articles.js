@@ -13,7 +13,7 @@ export default function handler(req, res) {
         "is_featured": false,
         "categories": {
           "id": 1,
-          "title": "Food"
+          "title": "Food & Drink"
         },
         "title": "10 Simple and Delicious Ways to Cook with Quinoa",
         "summary": "Quinoa is an incredibly versatile and nutritious ingredient that should be in any home cook's pantry. It's great for adding texture and nutrition to any meal and it's also gluten-free. I highly recommend experimenting with it in different recipes.",
@@ -27,7 +27,7 @@ export default function handler(req, res) {
         "is_featured": true,
         "categories": {
           "id": 1,
-          "title": "Food"
+          "title": "Food & Drink"
         },
         "title": "Mastering the Art of Homemade Sushi Rolls",
         "summary": "To make sushi rolls at home, gather ingredients such as sushi rice, vinegar, sugar, salt, and fillings. Cook rice and mix with vinegar mixture, let cool. Assemble by laying nori on a sushi mat, spreading rice, adding fillings, rolling and cutting. Experiment with different fillings and flavors to make unique recipe",
@@ -41,7 +41,7 @@ export default function handler(req, res) {
         "is_featured": false,
         "categories": {
           "id": 1,
-          "title": "Food"
+          "title": "Food & Drink"
         },
         "title": "Healthy and Satisfying Vegetarian Meal Ideas",
         "summary": "Here are some delicious and easy vegetarian meal ideas such as lentil and vegetable curry, black bean and sweet potato tacos, stuffed bell peppers, spinach and feta stuffed portobello mushrooms, vegetable and tofu stir-fry, lentil and vegetable soup, chickpea and spinach curry, lentil and eggplant lasagna, grilled portobello mushroom burgers, pesto pasta with roasted vegetables that are not only healthy but also satisfying and easy to make, and can be adapted to suit your personal taste preferences.",
@@ -55,7 +55,7 @@ export default function handler(req, res) {
         "is_featured": false,
         "categories": {
           "id": 1,
-          "title": "Food"
+          "title": "Food & Drink"
         },
         "title": "Exploring the World of International Street Foods",
         "summary": "Street food offers a delicious and affordable way to explore different cultures, from skewered meat satay in Asia to tacos in Latin America and fish and chips in Europe.",
@@ -69,7 +69,7 @@ export default function handler(req, res) {
         "is_featured": false,
         "categories": {
           "id": 1,
-          "title": "Food"
+          "title": "Food & Drink"
         },
         "title": "The Ultimate Guide to Pairing Wine with Cheese",
         "summary": "Wine and Cheese pairing: balance, match, region, room temp, variety.",
@@ -265,7 +265,7 @@ export default function handler(req, res) {
         "is_featured": false,
         "categories": {
           "id": 5,
-          "title": "Business And Work"
+          "title": "Business & Work"
         },
         "title": "Maximizing Productivity in the Workplace: Tips and Tricks",
         "summary": "Maximizing productivity in the workplace requires setting clear goals and priorities, managing time effectively, creating a positive work environment, minimizing interruptions and looking for ways to work smarter, not just harder. It's also important to take care of yourself and maintain a healthy work-life balance.",
@@ -279,7 +279,7 @@ export default function handler(req, res) {
         "is_featured": true,
         "categories": {
           "id": 5,
-          "title": "Business And Work"
+          "title": "Business & Work"
         },
         "title": "Navigating the Gig Economy: Strategies for Success as a Freelancer",
         "summary": "Strategies for success as a freelancer: niche, online presence, networking and financial management.",
@@ -293,7 +293,7 @@ export default function handler(req, res) {
         "is_featured": false,
         "categories": {
           "id": 5,
-          "title": "Business And Work"
+          "title": "Business & Work"
         },
         "title": "Leadership in the Modern Workplace: Adapting to the Changing Landscape of Business",
         "summary": "Leadership in modern workplace requires adaptability, inclusivity, communication and flexibility.",
@@ -307,7 +307,7 @@ export default function handler(req, res) {
         "is_featured": false,
         "categories": {
           "id": 5,
-          "title": "Business And Work"
+          "title": "Business & Work"
         },
         "title": "Building a Strong Company Culture: The Key to Business Success",
         "summary": "Building strong company culture leads to employee engagement, motivation and success.",
@@ -321,7 +321,7 @@ export default function handler(req, res) {
         "is_featured": true,
         "categories": {
           "id": 5,
-          "title": "Business And Work"
+          "title": "Business & Work"
         },
         "title": "The Importance of Networking in the Business World",
         "summary": "Networking essential for career opportunities, professional growth and visibility",
