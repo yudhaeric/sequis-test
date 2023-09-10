@@ -44,6 +44,7 @@ export default function Homepage() {
   };
 
   const [filteredArticles, setFilteredArticles] = useState([]);
+  const [featuredArticles, setFeaturedArticles] = useState([]);
   const [showMoreCount, setShowMoreCount] = useState(10);
   const [showMoreArticleButton, setShowMoreArticleButton] = useState(false);
 
@@ -76,6 +77,10 @@ export default function Homepage() {
     } else {
       setShowMoreArticleButton(true);
     }
+
+    let featuredArticles = articles.filter(article => article.is_featured === true).slice(0, 3);
+    setFeaturedArticles(featuredArticles);
+
   }, [selectedCategory, articles, showMoreCount]);
 
   return (
@@ -154,6 +159,30 @@ export default function Homepage() {
           MORE ARTICLES
         </button>
       )}
+      {/* Featured Article Section */}
+      <div className='flex felx-col justify-center w-full mt-16 bg-black'>
+        <div className='flex flex-col justify-center items-center text-white w-[90%] mt-10 lg:mt-16'>
+          <h1 className='text-[34px] font-bold lg:text-[44px]'>Empowering Minds</h1>
+          <p className='mt-3 opacity-80 text-[24px] text-center'>Insights and Strategies for Personal and Professional Growth</p>
+          <div className='grid grid-cols-1 my-10'>
+            {featuredArticles.map((article) => (
+              <div key={article.id}>
+                <Image
+                  className='rounded-xl w-[600px] h-[200px] lg:w-[400px] lg:h-[300px]'
+                  src={article.image}
+                  width={600}
+                  height={450}
+                  alt='Image Article'
+                />
+                <div className='border-2 border-solid border-white w-[60%] rounded-full mt-7 py-1 mx-[20%]'>
+                  <h5 className='uppercase text-sm text-center'>By <span className='font-bold'>{article.author}</span></h5>
+                </div>
+                <h2 className='my-5 text-center text-[26px]'>{article.title}</h2>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
