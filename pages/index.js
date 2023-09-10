@@ -197,7 +197,7 @@ export default function Homepage() {
             <h2 className='text-white font-bold text-lg leading-6 lg:text-sm lg:leading-4'>Sequis<br/>Innovation<br/>Lab</h2>
           </div>
           <div>
-            <p className='text-[#FF6B01] text-center font-semibold mb-3 lg:text-start lg:mb-1'>The more that you read, the more things you will know. The more that you learn, the more places you'll go.</p>
+            <p className='text-[#FF6B01] text-center font-semibold mb-3 lg:text-start lg:mb-1'>The more that you read, the more things you will know. The more that you learn, the more places you&rsquo;ll go.</p>
             <p className='text-[#e8e8e8] text-center lg:text-start'>Created by the <span className='underline'>Innovation Lab</span> for testing web development skills.</p>
           </div>
         </div>
