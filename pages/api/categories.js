@@ -8,24 +8,28 @@ export default function handler(req, res) {
     "data": [
       {
         "id": 1,
-        "title": "Food"
+        "title": "All Articles"
       },
       {
         "id": 2,
-        "title": "Travel"
+        "title": "Fashion & Beauty"
       },
       {
         "id": 3,
-        "title": "Fashion And Beauty"
-      },
-      {
-        "id": 4,
         "title": "Film"
       },
       {
+        "id": 4,
+        "title": "Food & Drink"
+      },
+      {
         "id": 5,
-        "title": "Business And Work"
-      }
+        "title": "Travel"
+      },
+      {
+        "id": 6,
+        "title": "Business & Work"
+      },
     ]
   };
 
