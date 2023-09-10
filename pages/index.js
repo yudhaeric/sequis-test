@@ -47,7 +47,9 @@ export default function Homepage() {
 
   useEffect(() => {
     if (selectedCategory === "All Articles") {
-      setFilteredArticles(articles.filter(article => article.is_featured === false));
+      setFilteredArticles(articles
+        .filter(article => article.is_featured === false)
+        .sort((a, b) => new Date(b.created_at) - new Date(a.created_at)));
     } else {
       setFilteredArticles(articles.filter(article => article.categories.title === selectedCategory));
     }
