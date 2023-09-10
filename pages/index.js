@@ -37,6 +37,22 @@ export default function Homepage() {
   const categoryBottomID = [4, 5, 6];
   const categoryBottom = categories.filter(category => categoryBottomID.includes(category.id));
 
+  const [selectedCategory, setSelectedCategory] = useState("All Articles");
+
+  const handleCategoryArticle = (categoryTitle) => {
+    setSelectedCategory(categoryTitle);
+  };
+
+  const [filteredArticles, setFilteredArticles] = useState([]);
+
+  useEffect(() => {
+    if (selectedCategory === "All Articles") {
+      setFilteredArticles(articles.filter(article => article.is_featured === false));
+    } else {
+      setFilteredArticles(articles.filter(article => article.categories.title === selectedCategory));
+    }
+  }, [selectedCategory, articles]);
+
   return (
     <div className='flex flex-col items-center'>
       {/* Header */}
@@ -62,14 +78,24 @@ export default function Homepage() {
             alt='Logo'
           />
           <div className='grid grid-cols-3 items-center gap-x-7 mr-[70px]'>
-            {categoryTop.map((data) => (
-              <div key={data.id}>
-                <a className='font-bold'>{data.title}</a>
+            {categoryTop.map((category) => (
+              <div key={category.id}>
+                <a 
+                  onClick={() => handleCategoryArticle(category.title)} 
+                  className={`${selectedCategory === category.title ? 'text-[#FF6B01]' : ''} cursor-pointer font-bold`}
+                >
+                  {category.title}
+                </a>
               </div>
             ))}
-            {categoryBottom.map((data) => (
-              <div key={data.id} className='mt-[-80px]'>
-                <a className='font-bold'>{data.title}</a>
+            {categoryBottom.map((category) => (
+              <div key={category.id} className='mt-[-80px]'>
+                <a 
+                  onClick={() => handleCategoryArticle(category.title)} 
+                  className={`${selectedCategory === category.title ? 'text-[#FF6B01]' : ''} cursor-pointer font-bold`}
+                >
+                  {category.title}
+                </a>
                 <div className='border-b-4 border-black w-64 mt-3'/>
               </div>
             ))}
@@ -78,7 +104,7 @@ export default function Homepage() {
       </header>
       {/* Article Section */}
       <div className='grid grid-cols-1 gap-6 w-[85%] lg:grid-cols-2'>
-        {articles.map((article) => (
+        {filteredArticles.map((article) => (
           <div key={article.id} className='flex flex-col items-center'>
             <Image
               className='rounded-xl w-[600px] h-[200px] lg:h-[400px]'
