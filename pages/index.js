@@ -44,16 +44,39 @@ export default function Homepage() {
   };
 
   const [filteredArticles, setFilteredArticles] = useState([]);
+  const [showMoreCount, setShowMoreCount] = useState(10);
+  const [showMoreArticleButton, setShowMoreArticleButton] = useState(false);
+
+  const handleShowMoreArticle = () => {
+    setShowMoreCount(showMoreCount + 10);
+  }
 
   useEffect(() => {
+    let newFilteredArticles;
+  
     if (selectedCategory === "All Articles") {
-      setFilteredArticles(articles
+      // Filter dan urutkan artikel
+      newFilteredArticles = articles
         .filter(article => article.is_featured === false)
-        .sort((a, b) => new Date(b.created_at) - new Date(a.created_at)));
+        .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
     } else {
-      setFilteredArticles(articles.filter(article => article.categories.title === selectedCategory));
+      // Filter artikel berdasarkan kategori yang dipilih
+      newFilteredArticles = articles.filter(article => article.categories.title === selectedCategory);
     }
-  }, [selectedCategory, articles]);
+  
+    // Set jumlah artikel yang akan ditampilkan
+    const articlesToShow = newFilteredArticles.slice(0, showMoreCount);
+  
+    // Atur state filteredArticles dan tombol "More Articles"
+    setFilteredArticles(articlesToShow);
+  
+    // Atur tombol "More Articles" berdasarkan apakah ada lebih banyak artikel yang tersedia
+    if (showMoreCount >= newFilteredArticles.length) {
+      setShowMoreArticleButton(false);
+    } else {
+      setShowMoreArticleButton(true);
+    }
+  }, [selectedCategory, articles, showMoreCount]);
 
   return (
     <div className='flex flex-col items-center'>
@@ -122,6 +145,15 @@ export default function Homepage() {
           </div>
         ))}
       </div>
+      {showMoreArticleButton && (
+        <button
+          id='moreArticlesButton'
+          className='mt-16 px-14 py-4 border border-black'
+          onClick={() => handleShowMoreArticle()}
+        >
+          MORE ARTICLES
+        </button>
+      )}
     </div>
   );
 }
