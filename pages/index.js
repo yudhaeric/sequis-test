@@ -30,21 +30,52 @@ export default function Homepage() {
         console.error('Error categories data not found:', error);
       });
   }, []);
+  
+  const categoryTopID = [1, 2, 3];
+  const categoryTop = categories.filter(category => categoryTopID.includes(category.id));
+
+  const categoryBottomID = [4, 5, 6];
+  const categoryBottom = categories.filter(category => categoryBottomID.includes(category.id));
 
   return (
     <div className='flex flex-col items-center'>
       {/* Header */}
-      <div className='flex mb-7 justify-between items-center gap-8 w-full pl-4 pr-8'>
-        <div className='flex items-end bg-[#FF6B01] w-52 h-20 pl-4 pb-2'>
-          <h1 className='uppercase font-bold'><span className='line-through'>logoooooo</span> <br/> web developer </h1>
+      <header className='w-[90%] lg:w-[95%]'>
+        {/* Mobile */}
+        <div className='flex justify-between items-center mb-7 lg:hidden'>
+          <div className='flex items-end bg-[#FF6B01] w-52 h-20 pl-4 pb-2'>
+            <h1 className='uppercase font-bold'><span className='line-through'>logoooooo</span> <br/> web developer </h1>
+          </div>
+          <Image
+            src="/hamburger-menu.png"
+            width={30}
+            height={30}
+            alt='Menu Icon'
+          />
         </div>
-        <Image
-          src="/hamburger-menu.png"
-          width={30}
-          height={30}
-          alt='Menu Icon'
-        />
-      </div>
+        {/* Desktop */}
+        <div className='flex w-full justify-between mobile:hidden'>
+          <Image
+            src="/logo.png"
+            width={70}
+            height={120}
+            alt='Logo'
+          />
+          <div className='grid grid-cols-3 items-center gap-x-7 mr-[70px]'>
+            {categoryTop.map((data) => (
+              <div key={data.id}>
+                <a className='font-bold'>{data.title}</a>
+              </div>
+            ))}
+            {categoryBottom.map((data) => (
+              <div key={data.id} className='mt-[-80px]'>
+                <a className='font-bold'>{data.title}</a>
+                <div className='border-b-4 border-black w-64 mt-3'/>
+              </div>
+            ))}
+          </div>
+        </div>
+      </header>
       {/* Article Section */}
       <div className='grid grid-cols-1 gap-6 w-[85%] lg:grid-cols-2'>
         {articles.map((article) => (
