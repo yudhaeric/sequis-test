@@ -160,7 +160,7 @@ export default function Homepage() {
         </button>
       )}
       {/* Featured Article Section */}
-      <div className='flex felx-col justify-center w-full mt-16 bg-black'>
+      <div className='flex flex-col items-center w-full mt-16 bg-black'>
         <div className='flex flex-col justify-center items-center text-white w-[90%] mt-10 lg:mt-16'>
           <h1 className='text-[34px] font-bold lg:text-[44px]'>Empowering Minds</h1>
           <p className='mt-3 opacity-80 text-[24px] text-center'>Insights and Strategies for Personal and Professional Growth</p>
