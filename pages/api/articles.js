@@ -153,7 +153,7 @@ export default function handler(req, res) {
         "is_featured": true,
         "categories": {
           "id": 3,
-          "title": "Fashion And Beauty"
+          "title": "Fashion & Beauty"
         },
         "title": "Fashion Meets Function: How to Dress for the Office and Beyond",
         "summary": "Dressing for the office can be a balance between fashion and function. Invest in key pieces such as a well-fitted blazer, classic button-up shirt and tailored trousers or pencil skirt made of wrinkle-resistant fabrics. Add a pop of color or print to make the outfit interesting. Prioritize comfort by choosing low-heeled pumps or loafers and accessorize with statement necklace, earrings, watch or a well-made bag. Dressing professionally can help you feel more confident and productive in the office and open up opportunities.",
@@ -167,7 +167,7 @@ export default function handler(req, res) {
         "is_featured": false,
         "categories": {
           "id": 3,
-          "title": "Fashion And Beauty"
+          "title": "Fashion & Beauty"
         },
         "title": "The Art of Accessorizing: How to Elevate Your Outfit",
         "summary": "Accessorizing is an art that can elevate your outfit and make you look polished and put-together. To make the most of your wardrobe, it's important to choose a few well-chosen pieces, mix and match different textures and materials, and consider the colors of your outfit. Remember, less is often more when it comes to accessorizing, choose pieces that complement your outfit and don't overpower it. Accessorizing can add elegance, edge or pop of color to your look. With these tips in mind, you'll be able to create polished and put-together looks that will turn heads.",
@@ -181,7 +181,7 @@ export default function handler(req, res) {
         "is_featured": false,
         "categories": {
           "id": 3,
-          "title": "Fashion And Beauty"
+          "title": "Fashion & Beauty"
         },
         "title": "Fashion for All: How to Dress for Your Body Type",
         "summary": "Fashion is for everyone and it's all about finding what works for you. To dress for your body type, it's important to understand your body shape, consider the fit of clothing, pay attention to color, and experiment with different styles. By doing this, you can find the perfect look that accentuates your best features and makes you feel confident and stylish. Remember to always be true to yourself and have fun with fashion.",
@@ -195,7 +195,7 @@ export default function handler(req, res) {
         "is_featured": true,
         "categories": {
           "id": 3,
-          "title": "Fashion And Beauty"
+          "title": "Fashion & Beauty"
         },
         "title": "The Future of Fashion: How Technology is Changing the Industry",
         "summary": "Technology is revolutionizing the fashion industry, with virtual try-on apps, 3D printing, data analytics, and sustainable production methods shaping the future of fashion. Brands can create intricate designs at a lower cost, track customer behavior, respond to trends quickly and make fashion more environmentally friendly.",
@@ -209,7 +209,7 @@ export default function handler(req, res) {
         "is_featured": false,
         "categories": {
           "id": 3,
-          "title": "Fashion And Beauty"
+          "title": "Fashion & Beauty"
         },
         "title": "Fashion and Beauty: How to Create a Cohesive Look",
         "summary": "Creating a cohesive look in fashion and beauty is about having a clear idea, choosing colors that complement, mixing different textures and patterns, and being confident in your choices.",
