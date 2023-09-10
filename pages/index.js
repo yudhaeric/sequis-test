@@ -164,7 +164,7 @@ export default function Homepage() {
         <div className='flex flex-col justify-center items-center text-white w-[90%] mt-10 lg:mt-16'>
           <h1 className='text-[34px] font-bold lg:text-[44px]'>Empowering Minds</h1>
           <p className='mt-3 opacity-80 text-[24px] text-center'>Insights and Strategies for Personal and Professional Growth</p>
-          <div className='grid grid-cols-1 my-10'>
+          <div className='grid grid-cols-1 my-10 lg:grid-cols-3'>
             {featuredArticles.map((article) => (
               <div key={article.id}>
                 <Image
@@ -174,10 +174,10 @@ export default function Homepage() {
                   height={450}
                   alt='Image Article'
                 />
-                <div className='border-2 border-solid border-white w-[60%] rounded-full mt-7 py-1 mx-[20%]'>
+                <div className='border-2 border-solid border-white w-[60%] rounded-full mt-7 py-1 mx-[20%] lg:w-[45%] lg:mx-[25%]'>
                   <h5 className='uppercase text-sm text-center'>By <span className='font-bold'>{article.author}</span></h5>
                 </div>
-                <h2 className='my-5 text-center text-[26px]'>{article.title}</h2>
+                <h2 className='my-5 text-center text-[26px] lg:text-[22px]'>{article.title}</h2>
               </div>
             ))}
           </div>
