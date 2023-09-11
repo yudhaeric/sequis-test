@@ -120,18 +120,20 @@ export default function Homepage() {
       {/* Article Section */}
       <div className='grid grid-cols-1 gap-6 w-[85%] lg:grid-cols-2'>
         {filteredArticles.map((article) => (
-          <div key={article.id} className='flex flex-col items-center'>
-            <Image
-              className='rounded-xl w-[600px] h-[200px] lg:h-[400px]'
-              src={article.image}
-              width={600}
-              height={450}
-              alt='Image Article'
-            />
-            <div className='border-2 border-solid border-black rounded-full mt-7 px-3'>
-              <h5 className='uppercase text-sm'>By <span className='font-bold'>{article.author}</span></h5>
-            </div>
-            <h2 className='mt-4 text-center text-xl font-semibold'>{article.title}</h2>
+          <div key={article.id}>
+            <a href={`/article/${article.id}`} className='flex flex-col items-center'>
+              <Image
+                className='rounded-xl w-[600px] h-[200px] lg:h-[400px]'
+                src={article.image}
+                width={600}
+                height={450}
+                alt='Image Article'
+              />
+              <div className='border-2 border-solid border-black rounded-full mt-7 px-3'>
+                <h5 className='uppercase text-sm'>By <span className='font-bold'>{article.author}</span></h5>
+              </div>
+              <h2 className='mt-4 text-center text-xl font-semibold'>{article.title}</h2>
+            </a>
           </div>
         ))}
       </div>
@@ -152,17 +154,19 @@ export default function Homepage() {
           <div className='grid grid-cols-1 my-10 lg:grid-cols-3'>
             {featuredArticles.map((article) => (
               <div key={article.id}>
-                <Image
-                  className='rounded-xl w-[600px] h-[200px] lg:w-[350px] lg:h-[250px]'
-                  src={article.image}
-                  width={600}
-                  height={450}
-                  alt='Image Article'
-                />
-                <div className='border-2 border-solid border-white w-[60%] rounded-full mt-7 py-1 mx-[20%] lg:w-[45%] lg:mx-[25%]'>
-                  <h5 className='uppercase text-sm text-center lg:text-[11px]'>By <span className='font-bold'>{article.author}</span></h5>
-                </div>
-                <h2 className='my-5 text-center text-[26px] lg:text-[20px]'>{article.title}</h2>
+                <a href={`/article/${article.id}`}>
+                  <Image
+                    className='rounded-xl w-[600px] h-[200px] lg:w-[350px] lg:h-[250px]'
+                    src={article.image}
+                    width={600}
+                    height={450}
+                    alt='Image Article'
+                  />
+                  <div className='border-2 border-solid border-white w-[60%] rounded-full mt-7 py-1 mx-[20%] lg:w-[45%] lg:mx-[25%]'>
+                    <h5 className='uppercase text-sm text-center lg:text-[11px]'>By <span className='font-bold'>{article.author}</span></h5>
+                  </div>
+                  <h2 className='my-5 text-center text-[26px] lg:text-[20px]'>{article.title}</h2>
+                </a>
               </div>
             ))}
           </div>
