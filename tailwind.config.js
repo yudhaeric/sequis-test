@@ -10,6 +10,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'zilla-reguler': ['zillaslab-reguler', 'serif'],
+      },
       screens: {
         'mobile': {'min': '360px', 'max': '500px'},
       },
