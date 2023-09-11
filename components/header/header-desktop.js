@@ -16,7 +16,7 @@ export default function HeaderDesktop({categories, articles, selectedCategory, h
         height={120}
         alt='Logo'
       />
-      <div className='grid grid-cols-3 items-center gap-x-7 mr-[70px]'>
+      <div className='grid grid-cols-3 items-center gap-x-7 mr-[10px]'>
         {categoryTop.map((category) => (
           <div key={category.id}>
             <a 
