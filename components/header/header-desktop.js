@@ -35,7 +35,7 @@ export default function HeaderDesktop({categories, articles, selectedCategory, h
             >
               {category.title}
             </a>
-            <div className='border-b-4 border-black w-64 mt-3'/>
+            <div className='border-b-4 border-black w-[245px] mt-3'/>
           </div>
         ))}
       </div>
