@@ -168,16 +168,16 @@ export default function Homepage() {
             {featuredArticles.map((article) => (
               <div key={article.id}>
                 <Image
-                  className='rounded-xl w-[600px] h-[200px] lg:w-[400px] lg:h-[300px]'
+                  className='rounded-xl w-[600px] h-[200px] lg:w-[350px] lg:h-[250px]'
                   src={article.image}
                   width={600}
                   height={450}
                   alt='Image Article'
                 />
                 <div className='border-2 border-solid border-white w-[60%] rounded-full mt-7 py-1 mx-[20%] lg:w-[45%] lg:mx-[25%]'>
-                  <h5 className='uppercase text-sm text-center'>By <span className='font-bold'>{article.author}</span></h5>
+                  <h5 className='uppercase text-sm text-center lg:text-[11px]'>By <span className='font-bold'>{article.author}</span></h5>
                 </div>
-                <h2 className='my-5 text-center text-[26px] lg:text-[22px]'>{article.title}</h2>
+                <h2 className='my-5 text-center text-[26px] lg:text-[20px]'>{article.title}</h2>
               </div>
             ))}
           </div>
