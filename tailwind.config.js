@@ -13,6 +13,15 @@ module.exports = {
       screens: {
         'mobile': {'min': '360px', 'max': '500px'},
       },
+      keyframes: {
+        slideIn: {
+          '0%': {transform: 'translateY(-100%)'},
+          '100%': {transform: 'translateY(0)'}
+        },
+      },
+      animation: {
+        headerIn: 'slideIn 0.5s ease-out',
+      }
     },
   },
   plugins: [],
