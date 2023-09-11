@@ -31,12 +31,6 @@ export default function Homepage() {
         console.error('Error categories data not found:', error);
       });
   }, []);
-  
-  const categoryTopID = [1, 2, 3];
-  const categoryTop = categories.filter(category => categoryTopID.includes(category.id));
-
-  const categoryBottomID = [4, 5, 6];
-  const categoryBottom = categories.filter(category => categoryBottomID.includes(category.id));
 
   const [selectedCategory, setSelectedCategory] = useState("All Articles");
 
@@ -86,41 +80,13 @@ export default function Homepage() {
 
   return (
     <div className='flex flex-col items-center'>
-      {/* Header */}
       <header className='w-[90%] lg:w-[95%]'>
-        <Header/>
-        {/* Desktop */}
-        <div className='flex w-full justify-between mobile:hidden'>
-          <Image
-            src="/logo.png"
-            width={70}
-            height={120}
-            alt='Logo'
-          />
-          <div className='grid grid-cols-3 items-center gap-x-7 mr-[70px]'>
-            {categoryTop.map((category) => (
-              <div key={category.id}>
-                <a 
-                  onClick={() => handleCategoryArticle(category.title)} 
-                  className={`${selectedCategory === category.title ? 'text-[#FF6B01]' : ''} cursor-pointer font-bold`}
-                >
-                  {category.title}
-                </a>
-              </div>
-            ))}
-            {categoryBottom.map((category) => (
-              <div key={category.id} className='mt-[-80px]'>
-                <a 
-                  onClick={() => handleCategoryArticle(category.title)} 
-                  className={`${selectedCategory === category.title ? 'text-[#FF6B01]' : ''} cursor-pointer font-bold`}
-                >
-                  {category.title}
-                </a>
-                <div className='border-b-4 border-black w-64 mt-3'/>
-              </div>
-            ))}
-          </div>
-        </div>
+        <Header 
+          categories={categories}
+          articles={articles} 
+          selectedCategory={selectedCategory}
+          handleCategoryArticle={handleCategoryArticle} 
+        />
       </header>
       {/* Article Section */}
       <div className='grid grid-cols-1 gap-6 w-[85%] lg:grid-cols-2'>
