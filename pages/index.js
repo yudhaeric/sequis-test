@@ -3,6 +3,7 @@ import axios from 'axios';
 import Image from 'next/image';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import Head from "next/head";
 
 export default function Homepage() {
   const [articles, setArticles] = useState([]);
@@ -81,6 +82,9 @@ export default function Homepage() {
 
   return (
     <div className='flex flex-col items-center'>
+      <Head>
+        <title>Explore & Discover</title>
+      </Head>
       <header className='w-[90%] lg:w-[95%]'>
         <Header
           articles={articles}
@@ -90,12 +94,12 @@ export default function Homepage() {
         />
       </header>
       {/* Article Section */}
-      <div className='grid grid-cols-1 gap-6 w-[85%] lg:grid-cols-2'>
+      <div className='grid grid-cols-1 gap-6 w-[85%] lg:grid-cols-2 lg:px-1'>
         {filteredArticles.map((article) => (
           <div key={article.id}>
             <a href={`/article/${article.id}`} className='flex flex-col items-center'>
               <Image
-                className='rounded-xl w-[600px] h-[200px] lg:h-[400px]'
+                className='rounded-xl w-[600px] h-[200px] lg:h-[400px] lg:rounded-lg'
                 src={article.image}
                 width={600}
                 height={450}
