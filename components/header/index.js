@@ -27,16 +27,20 @@ export default function Header({
             handleCategoryArticle={handleCategoryArticle}
           />
         )}
-        <div className='flex justify-between items-center mb-7 lg:hidden'>
-          <div className='flex items-end bg-[#FF6B01] w-52 h-20 pl-4 pb-2'>
-            <h1 className='uppercase font-bold'><span className='line-through'>logoooooo</span> <br/> web developer </h1>
-          </div>
+        <div className='flex justify-between items-center mb-10 lg:hidden mt-7'>
+          <Image
+            className='w-[265px] h-[40px] pl-4'
+            src="/logo.png"
+            width={165}
+            height={20}
+            alt='Logo Mobile'
+          />
           <button onClick={() => {setShowCategoryMenu(true)}}>
             <Image
               className=''
               src="/hamburger-menu.png"
-              width={30}
-              height={30}
+              width={24}
+              height={24}
               alt='Menu Icon'
             />
           </button>
