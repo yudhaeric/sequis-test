@@ -23,20 +23,6 @@ export default function DetailArticle() {
       });
   }, [id]);
 
-  const [articles, setArticles] = useState([]);
-
-  useEffect(() => {
-    // Memanggil API route /api/articles
-    axios.get('/api/articles')
-      .then((response) => {
-        const data = response.data.data;
-        setArticles(data);
-      })
-      .catch((error) => {
-        console.error('Error articles data not found:', error);
-      });
-  }, []);
-
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -56,46 +42,6 @@ export default function DetailArticle() {
   const handleCategoryArticle = (categoryTitle) => {
     setSelectedCategory(categoryTitle);
   };
-
-  const [filteredArticles, setFilteredArticles] = useState([]);
-  const [featuredArticles, setFeaturedArticles] = useState([]);
-  const [showMoreCount, setShowMoreCount] = useState(10);
-  const [showMoreArticleButton, setShowMoreArticleButton] = useState(false);
-
-  const handleShowMoreArticle = () => {
-    setShowMoreCount(showMoreCount + 10);
-  }
-
-  useEffect(() => {
-    let newFilteredArticles;
-  
-    if (selectedCategory === "All Articles") {
-      // Filter dan urutkan artikel
-      newFilteredArticles = articles
-        .filter(article => article.is_featured === false)
-        .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
-    } else {
-      // Filter artikel berdasarkan kategori yang dipilih
-      newFilteredArticles = articles.filter(article => article.categories.title === selectedCategory);
-    }
-  
-    // Set jumlah artikel yang akan ditampilkan
-    const articlesToShow = newFilteredArticles.slice(0, showMoreCount);
-  
-    // Atur state filteredArticles dan tombol "More Articles"
-    setFilteredArticles(articlesToShow);
-  
-    // Atur tombol "More Articles" berdasarkan apakah ada lebih banyak artikel yang tersedia
-    if (showMoreCount >= newFilteredArticles.length) {
-      setShowMoreArticleButton(false);
-    } else {
-      setShowMoreArticleButton(true);
-    }
-
-    let featuredArticles = articles.filter(article => article.is_featured === true).slice(0, 3);
-    setFeaturedArticles(featuredArticles);
-
-  }, [selectedCategory, articles, showMoreCount]);
 
   // Tanggal dalam format ISO
   const dateString = article.created_at;
@@ -121,7 +67,6 @@ export default function DetailArticle() {
     <div className='w-full flex flex-col items-center'>
       <header className='w-[90%] lg:w-[100%]'>
         <Header
-          articles={articles}
           categories={categories}
           selectedCategory={selectedCategory}
           handleCategoryArticle={handleCategoryArticle}
