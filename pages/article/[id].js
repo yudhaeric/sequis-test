@@ -137,8 +137,8 @@ export default function DetailArticle() {
           alt='Image Article'
         />
         <div className='relative bg-white rounded-tr-xl w-[200px] h-[50px] mt-[-50px] z-10 lg:mx-[6%]'>
-          <p className='uppercase text-[9px] mx-[15%] font-semibold pt-2'>{formattedDate}</p>
-          <p className='uppercase text-[12px] mx-[15%]'> BY <span className='font-bold'>{article.author}</span></p>
+          <p className='uppercase text-[9px] mx-[10%] font-semibold pt-2'>{formattedDate}</p>
+          <p className='uppercase text-[12px] mx-[10%]'> BY <span className='font-bold'>{article.author}</span></p>
         </div>
       </div>
       <div className='flex flex-col items-center justify-center w-[80%] lg:w-[75%]'>
