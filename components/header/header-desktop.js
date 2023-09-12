@@ -11,7 +11,7 @@ export default function HeaderDesktop({categories, articles, selectedCategory, h
   return (
     <div className='flex w-full justify-between mobile:hidden'>
       <Image
-        src="/logo.png"
+        src="/logo-desktop.png"
         width={70}
         height={120}
         alt='Logo'
