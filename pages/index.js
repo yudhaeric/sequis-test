@@ -99,7 +99,7 @@ export default function Homepage() {
           <div key={article.id}>
             <a href={`/article/${article.id}`} className='flex flex-col items-center'>
               <Image
-                className='rounded-xl w-[600px] h-[200px] lg:h-[400px] lg:rounded-lg'
+                className='rounded-xl w-[600px] h-[200px] lg:h-[400px] lg:rounded-lg image-scale'
                 src={article.image}
                 width={600}
                 height={450}
@@ -132,7 +132,7 @@ export default function Homepage() {
               <div key={article.id}>
                 <a href={`/article/${article.id}`}>
                   <Image
-                    className='rounded-xl w-[600px] h-[200px] lg:w-[350px] lg:h-[250px]'
+                    className='rounded-xl w-[600px] h-[200px] lg:w-[350px] lg:h-[250px] image-scale'
                     src={article.image}
                     width={600}
                     height={450}
